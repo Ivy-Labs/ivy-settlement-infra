@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.ivy.settlement</groupId>
+    <artifactId>ivy-settlement-infra</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>ivy-settlement-infra</name>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <!--		https://cloudsmith.io/~consensys/repos/teku/setup/#formats-maven-->
+        <repository>
+            <id>consensys-teku</id>
+            <url>https://artifacts.consensys.net/public/teku/maven/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+
+        <!--		https://hyperledger.jfrog.io/ui/native/besu-maven/org/hyperledger/besu/-->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://www.jitpack.io</url>
+        </repository>
+        <repository>
+            <id>artifactory</id>
+            <url>https://hyperledger.jfrog.io/hyperledger/besu-maven</url>
+        </repository>
+
+        <repository>
+            <id>consensys</id>
+            <url>https://artifacts.consensys.net/public/maven/maven/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- db -->
+        <dependency>
+            <groupId>org.rocksdb</groupId>
+            <artifactId>rocksdbjni</artifactId>
+            <version>9.6.2</version>
+        </dependency>
+        <!-- end db -->
+
+        <!-- log -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <!-- end log -->
+
+        <!-- config -->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <!-- end config -->
+
+        <dependency>
+            <groupId>org.tomlj</groupId>
+            <artifactId>tomlj</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.70</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.madgag.spongycastle/core -->
+        <dependency>
+            <groupId>com.madgag.spongycastle</groupId>
+            <artifactId>core</artifactId>
+            <version>1.58.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.madgag.spongycastle</groupId>
+            <artifactId>prov</artifactId>
+            <version>1.58.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.google.code.gson</groupId>-->
+        <!--            <artifactId>gson</artifactId>-->
+        <!--            <version>2.10.1</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>serializer</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>unsigned</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>ssz</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>bls</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>spec</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>jackson</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>jackson-deserializers</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>execution-types</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.pegasys.teku.internal</groupId>
+            <artifactId>bytes</artifactId>
+            <version>24.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.tmio</groupId>
+            <artifactId>tuweni-bytes</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tuweni</groupId>
+            <artifactId>tuweni-ssz</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tuweni</groupId>
+            <artifactId>tuweni-units</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>ivy-settlement-infra</finalName>
+        <plugins>
+            <!--JDK version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <encoding>UTF-8</encoding>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <argLine>
+                        --add-opens=java.base/java.lang=ALL-UNNAMED
+                        --add-opens=java.base/java.util=ALL-UNNAMED
+                    </argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
